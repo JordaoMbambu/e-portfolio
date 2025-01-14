@@ -8,11 +8,22 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class MbambuSaeController extends AbstractController
 {
-    #[Route('/mbambu/sae', name: 'app_mbambu_sae')]
+    #[Route('/', name: 'home')]
     public function index(): Response
     {
-        return $this->render('mbambu_sae/index.html.twig', [
-            'controller_name' => 'MbambuSaeController',
-        ]);
+        return $this->render('home/index.html.twig');
+    }
+
+    #[Route('/cv', name: 'cv')]
+    public function cv(): Response
+    {
+        return $this->render('home/cv.html.twig');
+    }
+
+
+    #[Route('/about', name: 'about')]
+    public function about(): Response
+    {
+        return $this->render('home/about.html.twig');
     }
 }
