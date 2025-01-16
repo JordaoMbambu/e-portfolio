@@ -11,19 +11,19 @@ class MbambuSaeController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
-        return $this->render('home/index.html.twig');
+        return $this->render('mbambu_sae/index.html.twig');
     }
 
     #[Route('/cv', name: 'cv')]
     public function cv(): Response
     {
-        return $this->render('home/cv.html.twig');
+        return $this->render('mbambu_sae/cv.html.twig');
     }
 
 
     #[Route('/about', name: 'about')]
     public function about(): Response
     {
-        return $this->render('home/about.html.twig');
+        return $this->render('/about.html.twig');
     }
 }

@@ -4,19 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}SAE14{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://bootswatch.com/5/sandstone/bootstrap.min.css" rel="stylesheet">
+    {% block stylesheets %}
+
+    <style>
+        *{
+          margin: 0;
+          box-sizing: border-box;
+        }
+        
+        body{
+          font-family: Roboto;
+          font-weight: 300;
+          font-size: .9rem;
+          line-height: 1.5;
+        }
+        
+        a{
+          text-decoration: none;
+          color:rgba(89, 89, 89, 0.84);
+        }
+        
+        a:hover{
+          text-decoration: underline;
+        }
+        
+        p{
+          margin: 0 0 1rem;
+        }
+        
+        h1{
+          margin: 0 0 1rem;
+          font-size: 2.5rem;
+          margin-bottom: .5rem;
+        }
+        
+        h2{
+          margin: 0 0 1rem;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+        
+        .text-blue{
+          color:rgba(89, 89, 89, 0.84);
+        }
+        
+        .text-darkblue{
+          color:rgb(46, 46, 46);
+        }
+        
+        .text-uppercase{
+          text-transform: uppercase; 
+        }
+        
+        .icon{
+          margin-right: .5rem;
+        }
+        
+        .cv-container{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-areas: "left-column right-column right-column";
+          width: 1200px;
+          margin: 100px auto;
+          box-shadow: 0 1px 3px rgba(6, 52, 235, 0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        
+        .section{
+          margin-bottom: 1.5rem;
+        }
+        
+        /* LEFT COLUMN */
+        .left-column{
+          grid-area: left-column;
+          padding: 50px;
+          background-color:rgba(89, 89, 89, 0.84);
+          color: white;
+        }
+        
+        .portait{
+          width: 150px; 
+          height: 150px; 
+          object-fit: cover; 
+          border-radius: 50%;
+          display: block;
+          margin: auto;
+          margin-bottom: 50px;
+        }
+        
+        .skills{
+          list-style-type: none;
+          padding: 0;
+          font-size: 1.1rem;
+          letter-spacing: 1px;
+          margin: 0 0 1rem;
+        }
+        
+        /* RIGHT COLUMN */
+        .right-column{
+          grid-area: right-column;
+          display: grid;
+          grid-template-rows: 250px 1fr;
+          grid-template-areas: 
+            "header"
+            "content";
+        }
+        
+        /* HEADER */
+        .header{
+          grid-area: header;
+          padding: 50px;
+          background-color: #F2F2F2;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        
+        .infos{
+          columns: 2;
+          list-style-type: none;
+          padding: 0;
+        }
+        
+        /* CONTENT */
+        .content{
+          grid-area: content;
+          padding: 50px;
+        }
+        
+        .experience-list{
+          list-style-type: circle;
+        }
+      </style>
+    {% endblock %}
 </head>
 <body>
     <header class="bg-dark text-white p-3">
-        <h1>Bienvenue sur mon site !</h1>
+        <h1>Jordao Mbambu-SAE104</h1>
     </header>
 
     <main class="container">
         {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </main>
 
-    <footer class="bg-light text-center p-3 mt-5">
-        © 2025 - Mon site personnel
+    <footer class="bg-white text-center p-3 mt-5">
+        © 2025 -Jordao Mbambu - Tous droits réservés
     </footer>
 </body>
 </html>
