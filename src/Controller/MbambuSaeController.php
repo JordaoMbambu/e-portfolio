@@ -19,16 +19,9 @@ class MbambuSaeController extends AbstractController
     {
         return $this->render('mbambu_sae/cv.html.twig');
     }
-    #[Route('/hobbies', name: 'cv')]
+    #[Route('/hobbies', name: 'hobbies')]
     public function hobbies(): Response
     {
         return $this->render('mbambu_sae/hobbies.html.twig');
-    }
-
-
-    #[Route('/about', name: 'about')]
-    public function about(): Response
-    {
-        return $this->render('/about.html.twig');
     }
 }

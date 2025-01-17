@@ -11,188 +11,318 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://bootswatch.com/5/sandstone/bootstrap.min.css" rel="stylesheet">
     {% block stylesheets %}
-
     <style>
-        *{
-          margin: 0;
-          box-sizing: border-box;
+        * {
+            margin: 0;
+            box-sizing: border-box;
         }
-        
-        body{
-          font-family: Roboto;
-          font-weight: 300;
-          font-size: .9rem;
-          line-height: 1.5;
-        }
-        
-        a{
-          text-decoration: none;
-          color:rgba(89, 89, 89, 0.84);
-        }
-        
-        a:hover{
-          text-decoration: underline;
-        }
-        
-        p{
-          margin: 0 0 1rem;
 
+        body {
+            font-family: Roboto;
+            font-weight: 300;
+            font-size: .9rem;
+            line-height: 1.5;
         }
-        
-        h1{
-          margin: 0 0 1rem;
-          font-size: 2.5rem;
-          margin-bottom: .5rem;
+
+        a {
+            text-decoration: none;
+            color: rgba(89, 89, 89, 0.84);
         }
-        
-        h2{
-          margin: 0 0 1rem;
-          letter-spacing: 1px;
-          text-transform: uppercase;
+
+        a:hover {
+            text-decoration: underline;
         }
-        
-        .text-blue{
-          color:rgba(89, 89, 89, 0.84);
+
+        p {
+            margin: 0 0 1rem;
         }
-        
-        .text-darkblue{
-          color:rgb(46, 46, 46);
+
+        h1 {
+            margin: 0 0 1rem;
+            font-size: 2.5rem;
+            margin-bottom: .5rem;
         }
-        
-        .text-uppercase{
-          text-transform: uppercase; 
+
+        h2 {
+            margin: 0 0 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        
-        .icon{
-          margin-right: .5rem;
+
+        .text-blue {
+            color: rgba(89, 89, 89, 0.84);
         }
-        
-        .cv-container{
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-template-areas: "left-column right-column right-column";
-          width: 1200px;
-          margin: 100px auto;
-          box-shadow: 0 1px 3px rgba(6, 52, 235, 0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+        .text-darkblue {
+            color: rgb(46, 46, 46);
         }
-        
-        .section{
-          margin-bottom: 1.5rem;
+
+        .text-uppercase {
+            text-transform: uppercase;
         }
-        
+
+        .icon {
+            margin-right: .5rem;
+        }
+
+        .cv-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: "left-column right-column right-column";
+            width: 1200px;
+            margin: 100px auto;
+            box-shadow: 0 1px 3px rgba(6, 52, 235, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
         /* LEFT COLUMN */
-        .left-column{
-          grid-area: left-column;
-          padding: 50px;
-          background-color:rgba(89, 89, 89, 0.84);
-          color: white;
+        .left-column {
+            grid-area: left-column;
+            padding: 50px;
+            background-color: rgba(89, 89, 89, 0.84);
+            color: white;
         }
-        
-        .portait{
-          width: 150px; 
-          height: 150px; 
-          object-fit: cover; 
-          border-radius: 50%;
-          display: block;
-          margin: auto;
-          margin-bottom: 50px;
+
+        .portait {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            margin: auto;
+            margin-bottom: 50px;
         }
-        
-        .skills{
-          list-style-type: none;
-          padding: 0;
-          font-size: 1.1rem;
-          letter-spacing: 1px;
-          margin: 0 0 1rem;
+
+        .skills {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin: 0 0 1rem;
         }
-        
+
         /* RIGHT COLUMN */
-        .right-column{
-          grid-area: right-column;
-          display: grid;
-          grid-template-rows: 250px 1fr;
-          grid-template-areas: 
-            "header"
-            "content";
+        .right-column {
+            grid-area: right-column;
+            display: grid;
+            grid-template-rows: 250px 1fr;
+            grid-template-areas:
+                "header"
+                "content";
         }
-        
+
         /* HEADER */
-        .header{
-          grid-area: header;
-          padding: 50px;
-          background-color: #F2F2F2;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
+        .header {
+            grid-area: header;
+            padding: 50px;
+            background-color: #F2F2F2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        
-        .infos{
-          columns: 2;
-          list-style-type: none;
-          padding: 0;
+
+        .infos {
+            columns: 2;
+            list-style-type: none;
+            padding: 0;
         }
-        
+
         /* CONTENT */
-        .content{
-          grid-area: content;
-          padding: 50px;
+        .content {
+            grid-area: content;
+            padding: 50px;
         }
-        
-        .experience-list{
-          list-style-type: circle;
+
+        .experience-list {
+            list-style-type: circle;
         }
-        .index{
-          font-size: 1.5rem;
+
+        .index {
+            font-size: 1.5rem;
         }
+
         .loisirs-container {
-          padding: 20px;
+            padding: 20px;
         }
-        
+
         .image-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-          margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
         }
-        
+
         .image-item img {
-          width: 100%;
-          height: auto;
-          border-radius: 8px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         .comments-section {
-          background-color: #f9f9f9;
-          padding: 15px;
-          border-radius: 8px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .comments-section h2 {
-          margin-bottom: 15px;
+            margin-bottom: 15px;
         }
-        
+
         .comments-section p {
-          margin: 10px 0;
-          line-height: 1.6;
+            margin: 10px 0;
+            line-height: 1.6;
         }
-        
-      </style>
+
+        /* Styles pour le thème sombre */
+        body.dark-theme {
+            background-color: rgba(43, 43, 43, 0.94);
+            color: #ffffff;
+        }
+
+        body.dark-theme .left-column {
+            background-color: rgba(30, 30, 30, 0.84);
+            color: #ffffff;
+        }
+
+        body.dark-theme .right-column {
+            background-color: rgba(43, 43, 43, 0.94);
+            color: #ffffff;
+        }
+
+        body.dark-theme .header {
+            background-color: rgba(50, 50, 50, 0.94);
+            color: #ffffff;
+        }
+
+        body.dark-theme .content {
+            background-color: rgba(43, 43, 43, 0.94);
+            color: #ffffff;
+        }
+
+        body.dark-theme .cv-container {
+            box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+        }
+
+        body.dark-theme .comments-section {
+            background-color: rgba(30, 30, 30, 0.84);
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-theme .comments-section h2 {
+            color: #ffffff;
+        }
+
+        body.dark-theme .comments-section p {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme footer {
+            background-color: rgba(30, 30, 30, 0.84);
+            color: #ffffff;
+        }
+        body.dark-theme footer {
+          background-color: rgba(30, 30, 30, 0.84); /* Fond sombre */
+          color: #ffffff; /* Texte blanc */
+          border-top: 1px solid rgba(255, 255, 255, 0.1); /* Bordure pour le contraste */
+      }
+
+        /* Bouton de bascule */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: rgb(206, 210, 215);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .theme-toggle.dark-theme {
+            background-color: #333;
+            color: #fff;
+        }
+        footer {
+          background-color: #ffffff; /* Fond blanc */
+          color: #000000; /* Texte noir */
+          padding: 20px;
+          text-align: center;
+      }
+       
+    </style>
     {% endblock %}
 </head>
+
 <body>
-    <header class="bg-dark text-white p-3">
-        <h1>Jordao Mbambu-SAE104</h1>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark" text-center>
+        <div class="">
+            <a href="{{ path('home') }}" class="btn btn-secondary">Accueil</a>
+            <a href="{{ path('cv') }}" class="btn btn-secondary">e-Portfolio</a>
+            <a href="{{ path('cv') }}" class="btn btn-secondary">CV</a>
+            <a href="{{ path('hobbies') }}" class="btn btn-secondary">Hobbies</a>
+            <!-- Bouton de bascule -->
+            <button class="theme-toggle" id="theme-toggle">🌙 Dark Mode</button>
+        </div>
+    </nav>
     </header>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Fonction pour basculer entre les thèmes
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+
+            // Bascule entre les thèmes
+            body.classList.toggle('dark-theme');
+            themeToggle.classList.toggle('dark-theme');
+
+            // Mettre à jour le texte du bouton
+            if (body.classList.contains('dark-theme')) {
+                themeToggle.textContent = '☀️ Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙 Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Appliquer le thème au chargement de la page
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-theme');
+                themeToggle.textContent = '☀️ Light Mode';
+            } else {
+                body.classList.remove('dark-theme');
+                themeToggle.textContent = '🌙 Dark Mode';
+            }
+        }
+
+        // Écouter le clic sur le bouton
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+        // Appliquer le thème au chargement de la page
+        document.addEventListener('DOMContentLoaded', applyTheme);
+    </script>
 
     <main class="container">
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </main>
 
-    <footer class="bg-white text-center p-3 mt-5">
-        © 2025 -Jordao Mbambu - Tous droits réservés
+    <footer>
+        © 2025 - Jordao Mbambu - Tous droits réservés
     </footer>
 </body>
 </html>
