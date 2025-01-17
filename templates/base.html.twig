@@ -276,6 +276,33 @@
         flex: 1; /* Prend tout l'espace disponible */
         padding: 20px;
     }
+    /* Styles pour la flèche de retour en haut */
+    .scroll-to-top {
+      position: fixed; /* Fixe la flèche à l'écran */
+      bottom: 150px; /* Distance depuis le bas */
+      right: 20px; /* Distance depuis la droite */
+      background-color: #333; /* Couleur de fond */
+      color: #fff; /* Couleur de l'icône */
+      width: 40px; /* Largeur */
+      height: 40px; /* Hauteur */
+      border-radius: 50%; /* Forme ronde */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; /* Curseur en forme de main */
+      opacity: 0; /* Invisible par défaut */
+      visibility: hidden; /* Caché par défaut */
+      transition: opacity 0.3s ease, visibility 0.3s ease; /* Animation */
+    }
+
+.scroll-to-top.show {
+    opacity: 1; /* Visible */
+    visibility: visible; /* Affiché */
+}
+
+.scroll-to-top:hover {
+    background-color: #555; /* Changement de couleur au survol */
+}
        
     </style>
     {% endblock %}
@@ -297,6 +324,10 @@
 </nav>
     </nav>
     </header>
+
+    <div id="scroll-to-top" class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i> <!-- Icône Font Awesome -->
+  </div>
 
     <!-- Script JavaScript -->
     <script>
@@ -339,6 +370,26 @@
 
         // Appliquer le thème au chargement de la page
         document.addEventListener('DOMContentLoaded', applyTheme);
+
+        // Sélectionnez la flèche
+      const scrollToTopButton = document.getElementById('scroll-to-top');
+
+    // Afficher ou masquer la flèche en fonction du défilement
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // Afficher après 200px de défilement
+            scrollToTopButton.classList.add('show');
+        } else {
+            scrollToTopButton.classList.remove('show');
+        }
+    });
+
+    // Remonter en haut de la page lors du clic
+    scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Défilement fluide
+        });
+    });
     </script>
 
     <main class="container">
@@ -349,5 +400,6 @@
     <footer>
         © 2025 - Jordao Mbambu - Tous droits réservés
     </footer>
+    
 </body>
 </html>
