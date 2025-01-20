@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Annotation\Route;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class MbambuSaeController extends AbstractController
 {
@@ -19,9 +22,63 @@ class MbambuSaeController extends AbstractController
     {
         return $this->render('mbambu_sae/cv.html.twig');
     }
+
     #[Route('/hobbies', name: 'hobbies')]
     public function hobbies(): Response
     {
-        return $this->render('mbambu_sae/hobbies.html.twig');
+        return $this->render('mbambu_sae/test.html.twig');
+    }
+    #[Route('/e-portfolio', name: 'e-portfolio')]
+    public function portfolio(): Response
+    {
+        return $this->render('mbambu_sae/e-portfolio.html.twig');
+    }
+
+    #[Route('/generate-cv', name: 'generate_cv', methods: ['POST'])]
+    public function generateCv(Request $request): Response
+    {
+        // Récupérer les données du formulaire
+        $name = $request->request->get('name', 'Nom inconnu');
+        $email = $request->request->get('email', 'Email non fourni');
+        $phone = $request->request->get('phone', 'Téléphone non fourni');
+        $jobTitle = $request->request->get('jobTitle', 'Poste non spécifié');
+
+        // Validation basique des données
+        $name = htmlspecialchars($name);
+        $email = htmlspecialchars($email);
+        $phone = htmlspecialchars($phone);
+        $jobTitle = htmlspecialchars($jobTitle);
+
+        // Rendre le template Twig en HTML
+        $html = $this->renderView('mbambu_sae/cvdownload.html.twig', [
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'jobTitle' => $jobTitle,
+        ]);
+
+        // Configurer Dompdf
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial'); // Police par défaut
+        $pdfOptions->setIsHtml5ParserEnabled(true); // Activer le parseur HTML5
+        $pdfOptions->setIsRemoteEnabled(true); // Activer le chargement des images externes
+        $dompdf = new Dompdf($pdfOptions);
+
+        // Charger le contenu HTML dans Dompdf
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait'); // Format A4 en mode portrait
+        $dompdf->render();
+
+        // Générer le fichier PDF
+        $pdfOutput = $dompdf->output();
+
+        // Créer un nom de fichier sécurisé
+        $safeFileName = preg_replace('/[^a-zA-Z0-9-_\.]/', '_', "cv_{$name}.pdf");
+
+        // Retourner le fichier PDF comme réponse
+        return new Response($pdfOutput, 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => "attachment; filename={$safeFileName}",
+        ]);
     }
 }

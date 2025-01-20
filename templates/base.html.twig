@@ -31,6 +31,8 @@
         display: flex;
         flex-direction: column;
         line-height: 1.5;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        
     }
 
     a {
@@ -185,12 +187,14 @@
     .comments-section p {
         margin: 10px 0;
         line-height: 1.6;
+        font-size: 18px;
     }
 
     /* Styles pour le thème sombre */
     body.dark-theme {
         background-color: rgba(43, 43, 43, 0.94);
         color: #ffffff;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     body.dark-theme .left-column {
@@ -303,6 +307,82 @@
 .scroll-to-top:hover {
     background-color: #555; /* Changement de couleur au survol */
 }
+/* Conteneur principal */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* S'assure que les colonnes passent en mode pile sur petits écrans */
+    gap: 20px; /* Espacement entre les colonnes */
+    padding: 20px;
+}
+
+/* Section INSCRIPTION */
+.inscription-section {
+    flex: 1; /* Prend autant d'espace disponible */
+    margin-right: 20px;
+}
+
+/* Section Aperçu du CV */
+.apercu-section {
+    flex: 1; /* Prend également de l'espace */
+}
+
+/* Champs du formulaire */
+form label {
+    display: inline-block;
+    width: 100px; /* Largeur fixe pour aligner les étiquettes */
+    margin-right: 10px;
+    text-align: right;
+}
+
+form input, form select {
+    width: calc(100% - 120px); /* Ajuste la largeur des champs */
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Bouton Télécharger */
+form button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Section Aperçu */
+.apercu-section {
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white; /* Assurez-vous du bon contraste avec le fond */
+}
+
+/* Adaptation pour petits écrans */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Passe en mode pile */
+    }
+
+    form label {
+        text-align: left;
+        width: 100%; /* Prend toute la largeur */
+    }
+
+    form input, form select {
+        width: 100%; /* Champs prennent toute la largeur */
+    }
+}
+
        
     </style>
     {% endblock %}
@@ -314,20 +394,19 @@
         <!-- Conteneur pour les boutons de navigation (gauche) -->
         <div class="nav-buttons">
             <a href="{{ path('home') }}" class="btn btn-secondary">Accueil</a>
-            <a href="{{ path('cv') }}" class="btn btn-secondary">e-Portfolio</a>
+            <a href="{{ path('e-portfolio') }}" class="btn btn-secondary">e-Portfolio</a>
             <a href="{{ path('cv') }}" class="btn btn-secondary">CV</a>
-            <a href="{{ path('hobbies') }}" class="btn btn-secondary">Hobbies</a>
+            <a href="{{ path('hobbies') }}" class="btn btn-secondary">Pour en savoir plus</a>
         </div>
         <!-- Bouton de bascule (droite) -->
-        <button class="theme-toggle" id="theme-toggle">🌙 Dark Mode</button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">🌙 Dark Mode</button>
     </div>
 </nav>
-    </nav>
-    </header>
 
-    <div id="scroll-to-top" class="scroll-to-top">
-      <i class="fas fa-arrow-up"></i> <!-- Icône Font Awesome -->
+  <div id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </div>
+  
 
     <!-- Script JavaScript -->
     <script>

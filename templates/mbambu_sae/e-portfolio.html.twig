@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}E-Portfolio{% endblock %}
+
+{% block body %}
+<section id="portfolio" class="container mt-5">
+    <!-- Header -->
+    <header class="text-center mb-5">
+        <h1 class="text-uppercase">Mon E-Portfolio</h1>
+    </header>
+
+    <!-- Competence Sections -->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Competence: RT1 -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title">RT1 - Administrer les réseaux et l'Internet</h3>
+                </div>
+                <div class="card-body">
+                    <p>Compétence clé : Assister l'administrateur réseau dans la configuration et la maintenance des infrastructures réseau.</p>
+                    <ul>
+                        <li>Configuration de routeurs et commutateurs</li>
+                        <li>Supervision des réseaux locaux</li>
+                        <li>Résolution des problèmes courants</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Voir les preuves</a>
+                </div>
+            </div>
+
+            <!-- Competence: RT2 -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title">RT2 - Connecter les entreprises et les usagers</h3>
+                </div>
+                <div class="card-body">
+                    <p>Compétence clé : Découvrir les transmissions et la téléphonie sur IP (ToIP).</p>
+                    <ul>
+                        <li>Mise en place de solutions de téléphonie</li>
+                        <li>Étude des protocoles de transmission</li>
+                        <li>Interconnexion de réseaux distants</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Voir les preuves</a>
+                </div>
+            </div>
+
+            <!-- Competence: RT3 -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title">RT3 - Créer des outils et des applications informatiques pour les R&T</h3>
+                </div>
+                <div class="card-body">
+                    <p>Compétence clé : S'intégrer dans un service informatique pour le développement d'applications spécifiques.</p>
+                    <ul>
+                        <li>Développement d'applications web (HTML, CSS, JavaScript)</li>
+                        <li>Gestion de bases de données</li>
+                        <li>Automatisation de tâches</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Voir les preuves</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

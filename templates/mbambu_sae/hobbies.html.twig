@@ -1,37 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Loisirs{% endblock %}
+{% block title %}Hobbies{% endblock %}
 
 {% block body %}
   <body>
 
-    <!-- Section des commentaires -->
+    <!-- Comments section -->
     <div class="comments-section">
-      <h2>Mes loisirs</h2>
-      <p><strong>Rubik's Cube :</strong> J'adore résoudre des Rubik's Cubes rapidement, c'est un excellent moyen d'améliorer ma concentration et ma réflexion logique.</p>
-      <p><strong>Échecs :</strong> Les échecs me permettent de développer des stratégies et de penser plusieurs coups à l'avance.</p>
-      <p><strong>Natation :</strong> Une activité qui me détend et m'aide à rester en forme.</p>
-      <p><strong>Vélo :</strong> Faire du vélo est pour moi un mélange parfait entre sport et exploration.</p>
+      <h2>My <span class="text-blue">Hobbies</span></h2>
+      <p><strong>Rubik's Cube:</strong> I love solving Rubik's Cubes quickly; it's a great way to improve my focus and logical thinking.</p>
+      <p><strong>Chess:</strong> Chess allows me to develop strategies and think several moves ahead.</p>
+      <p><strong>Swimming:</strong> It's an activity that relaxes me and helps me stay fit.</p>
+      <p><strong>Cycling:</strong> For me, cycling is the perfect mix of sport and exploration.</p>
     </div>
   </div>
   
-    <div class="loisirs-container">
-      <!-- Section des images -->
+    <div class="hobbies-container">
+      <!-- Images section -->
       <div class="image-grid">
         <div class="image-item">
           <img src="/images/rubik'scube.png" alt="Rubik's Cube" />
         </div>
         <div class="image-item">
-          <img src="/images/chess.png" alt="Jeu d'échecs" />
+          <img src="/images/chess.png" alt="Chess Game" />
         </div>
         <div class="image-item">
-          <img src="/images/swimming.png" alt="Natation" />
+          <img src="/images/swimming.png" alt="Swimming" />
         </div>
         <div class="image-item">
-          <img src="/images/velos.png" alt="Vélo" />
+          <img src="/images/velos.png" alt="Cycling" />
         </div>
-      </div>
-
-     
+      </div>   
   </body>
 {% endblock %}

@@ -79,7 +79,7 @@
               <p>
                 <strong>2025</strong>
                 <br>
-                Hacker Éthique en activité
+                Hacker Éthique en formation
               </p>
               <ul class="experience-list">
                 <li>Réseau</li>
@@ -110,5 +110,49 @@
           </div>
         </div>
       </div>
+      <div class="cv-container">
+        <!-- Formulaire d'inscription -->
+        <div class="form-section">
+            <h2>Télécharger le CV</h2>
+            <form id="cv-form" method="POST" action="/generate-cv">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Téléphone :</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="job-title">Titre du poste :</label>
+                <input type="text" id="job-title" name="job_title" required>
+
+                <label for="format">Format :</label>
+                <select id="format" name="format" required>
+                    <option value="pdf">PDF</option>
+                    <option value="docx">DOCX</option>
+                </select>
+
+                <button type="submit">Télécharger le CV</button>
+            </form>
+        </div>
+        <div class="cv-preview">
+            <h1>Aperçu du CV</h1>
+            <p>Une fois le formulaire rempli, le  pourra être téléchargé.</p>
+        </div>
+    </div>
+
+    <script>
+        // Validation basique et interaction utilisateur
+        document.getElementById('cv-form').addEventListener('submit', function(event) {
+            const form = event.target;
+            const name = form.name.value;
+            const email = form.email.value;
+            if (!name || !email) {
+                alert('Veuillez remplir tous les champs requis !');
+                event.preventDefault();
+            }
+        });
+    </script>
   </body>
 {% endblock %}
