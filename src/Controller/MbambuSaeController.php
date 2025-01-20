@@ -26,12 +26,28 @@ class MbambuSaeController extends AbstractController
     #[Route('/hobbies', name: 'hobbies')]
     public function hobbies(): Response
     {
-        return $this->render('mbambu_sae/test.html.twig');
+        return $this->render('mbambu_sae/hobbies.html.twig');
     }
     #[Route('/e-portfolio', name: 'e-portfolio')]
     public function portfolio(): Response
     {
         return $this->render('mbambu_sae/e-portfolio.html.twig');
+    }
+    
+    #[Route('/rt1', name: 'rt1')]
+    public function rt1(): Response
+    {
+        return $this->render('mbambu_sae/rt1.html.twig');
+    }
+    #[Route('/rt2', name: 'rt2')]
+    public function rt2(): Response
+    {
+        return $this->render('mbambu_sae/rt2.html.twig');
+    }
+    #[Route('/rt3', name: 'rt3')]
+    public function rt3(): Response
+    {
+        return $this->render('mbambu_sae/rt3.html.twig');
     }
 
     #[Route('/generate-cv', name: 'generate_cv', methods: ['POST'])]
