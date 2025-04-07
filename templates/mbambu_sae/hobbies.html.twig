@@ -3,48 +3,32 @@
 {% block title %}Savoir Plus{% endblock %}
 
 {% block body %}
-  <body>
 
-    <!-- Comments section -->
-    <div class="comments-section">
-      <h2><span class="text-blue">Certificates</span></h2>
-      <p><strong>SecNumAcadémie Certificate:</strong> Validates expertise in key areas of information security with perfect scores, backed by the French government agency ANSSI.</p>
-      <p><strong>TryHackMe Certificate:</strong> Demonstrates foundational knowledge in cybersecurity and practical skills from the Pre-Security Learning Path.</p>
+  <!-- Section des loisirs -->
+  <div class="comments-section">
+    <h2>Mes <span class="text-blue">Loisirs</span></h2>
+    <p><strong>Rubik's Cube :</strong> J’aime résoudre rapidement des Rubik's Cubes ; c’est excellent pour améliorer ma concentration et ma logique.</p>
+    <p><strong>Échecs :</strong> Les échecs m’aident à développer des stratégies et à anticiper plusieurs coups à l’avance.</p>
+    <p><strong>Natation :</strong> C’est une activité qui me détend et me permet de rester en forme.</p>
+    <p><strong>Vélo :</strong> Pour moi, le vélo est un excellent mélange entre sport et exploration.</p>
+  </div>
+
+  <!-- Images des loisirs -->
+  <div class="hobbies-container">
+    <div class="image-grid">
+      <div class="image-item">
+        <img src="/images/rubik'scube.png" alt="Rubik's Cube" />
+      </div>
+      <div class="image-item">
+        <img src="/images/chess.png" alt="Partie d'échecs" />
+      </div>
+      <div class="image-item">
+        <img src="/images/swimming.png" alt="Natation" />
+      </div>
+      <div class="image-item">
+        <img src="/images/velos.png" alt="Vélo" />
+      </div>
     </div>
-    <div class="hobbies-container">
-      <!-- Images section -->
-      <div class="image-grid">
-        <div class="image-item">
-          <img src="/images/ANSSI.png" alt="ANSSI certificate" />
-        </div>
-        <div class="image-item">
-          <img src="/images/Tryhackme.png" alt="TryHackMe certificate" />
-        </div>
-      </div>   
-  </body>
-    <div class="comments-section">
-      <h2>My <span class="text-blue">Hobbies</span></h2>
-      <p><strong>Rubik's Cube:</strong> I love solving Rubik's Cubes quickly; it's a great way to improve my focus and logical thinking.</p>
-      <p><strong>Chess:</strong> Chess allows me to develop strategies and think several moves ahead.</p>
-      <p><strong>Swimming:</strong> It's an activity that relaxes me and helps me stay fit.</p>
-      <p><strong>Cycling:</strong> For me, cycling is the perfect mix of sport and exploration.</p>
-    </div>
-  
-    <div class="hobbies-container">
-      <!-- Images section -->
-      <div class="image-grid">
-        <div class="image-item">
-          <img src="/images/rubik'scube.png" alt="Rubik's Cube" />
-        </div>
-        <div class="image-item">
-          <img src="/images/chess.png" alt="Chess Game" />
-        </div>
-        <div class="image-item">
-          <img src="/images/swimming.png" alt="Swimming" />
-        </div>
-        <div class="image-item">
-          <img src="/images/velos.png" alt="Cycling" />
-        </div>
-      </div>   
-  </body>
+  </div>
+
 {% endblock %}

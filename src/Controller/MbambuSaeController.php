@@ -49,6 +49,11 @@ class MbambuSaeController extends AbstractController
     {
         return $this->render('mbambu_sae/rt3.html.twig');
     }
+    #[Route('/parcours', name: 'parcours')]
+    public function parcours(): Response
+    {
+        return $this->render('mbambu_sae/choix.parcours.html.twig');
+    }
 
     #[Route('/generate-cv', name: 'generate_cv', methods: ['POST'])]
     public function generateCv(Request $request): Response

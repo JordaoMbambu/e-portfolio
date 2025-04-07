@@ -1,0 +1,17 @@
+import binascii
+
+hex_data = "ffd5f797d3c048bcc3b69c38a3aec41eecd991f95dd53cc37024f4a544a8a4ea5e012d6413588036d058070c4424aba5eb1603b1ffa70c719a6e08e558f3c1f84417735985e5e2e959335b40a0d5658da78cc8aca85beda26de124613816d9886f8bf88c29576d8e3435e31481526b0e1809ca2a3f958a3280844cdf838819f8c3f63168a380c25ac5d7fe488084e613875d52d4451b836ab7f49d77c84a44eab07a3490c20d0012e00a6f92f8e1e40670ec1617238e54c75fefded6b8bbdbcf8660b7b889d36209c715b6b70ae087a37ca5ecaf8fed7f9753ef5ad9a9da791959f471edd5f5b451bdd3edfa1ad224a2191d5c362dd617b72fd221eb1be837974922f241d7404ed4"
+
+# Convert hex to binary string
+bin_data = bin(int(hex_data, 16))[2:].zfill(len(hex_data) * 4)
+
+# Split into 7-bit chunks
+chars = []
+for i in range(0, len(bin_data), 7):
+    chunk = bin_data[i:i+7]
+    if len(chunk) < 7:
+        break
+    chars.append(chr(int(chunk, 2)))
+
+message = ''.join(chars)
+print("Flag trouvé : HACKCESS{" + message + "}")
