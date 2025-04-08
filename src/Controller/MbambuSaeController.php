@@ -49,6 +49,11 @@ class MbambuSaeController extends AbstractController
     {
         return $this->render('mbambu_sae/rt3.html.twig');
     }
+    #[Route('/analyse', name: 'analyse')]
+    public function analyse(): Response
+    {
+        return $this->render('mbambu_sae/analyse.html.twig');
+    }
     #[Route('/parcours', name: 'parcours')]
     public function parcours(): Response
     {
