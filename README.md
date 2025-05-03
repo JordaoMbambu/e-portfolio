@@ -77,8 +77,8 @@ Le site inclut des pages dynamiques et stylisées pour présenter :
 
 ## 📩 **Contactez-moi**
 - **Email** : jordaombambu@gmail.com
-- **LinkedIn** :
-- **Portfolio** :
+- **LinkedIn** : www.linkedin.com/in/jordaombambu
+
 
 ---
 
